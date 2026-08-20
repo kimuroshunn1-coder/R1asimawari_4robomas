@@ -43,11 +43,10 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+FDCAN_HandleTypeDef hfdcan1;
 FDCAN_HandleTypeDef hfdcan3;
 
 TIM_HandleTypeDef htim6;
-
-UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 //ESP32からの速度指令を受け取るための変数
@@ -56,7 +55,7 @@ volatile float Vy = 0.0f;
 volatile float omega = 0.0f;
 
 //車体中心からオムニまでの長さ
-const float R = 0.15f;
+const float R = 0.21f;
 
 //ESP32からの速度指令を受け取るための箱
 char rxBuf[64];
@@ -73,15 +72,21 @@ float motor_speed_B = 0.0f;
 float motor_speed_C = 0.0f;
 float motor_speed_D = 0.0f;
 
-//C610へ送る電流指令
-int16_t current_A = 0;
-int16_t current_B = 0;
-int16_t current_C = 0;
-int16_t current_D = 0;
+//電流地
+uint8_t TxData[8];
 
-//CAN送信用の変数
-FDCAN_TxHeaderTypeDef txHeader;
-uint8_t TxData[8]; //送信用のデータ
+//PID制御のための変数
+typedef struct {
+  uint16_t CANID;
+  float trgVel;
+  int16_t actVel;
+  int16_t p_actVel;
+  float hensa;
+  float ind;
+  int16_t cu; 
+} Robomas_t;
+Robomas_t robomas[4];
+
 
 /* USER CODE END PV */
 
@@ -89,8 +94,8 @@ uint8_t TxData[8]; //送信用のデータ
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM6_Init(void);
-static void MX_USART2_UART_Init(void);
 static void MX_FDCAN3_Init(void);
+static void MX_FDCAN1_Init(void);
 /* USER CODE BEGIN PFP */
 void OmniKinematics(void);
 void SendMotorCurrent(int16_t current_A, int16_t current_B, int16_t current_C, int16_t current_D);
@@ -165,26 +170,56 @@ HAL_StatusTypeDef motor_CAN_RxTxSettings_init(FDCAN_TxHeaderTypeDef *Htxheader)
   return HAL_OK;
 }
 
-// void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs){
-// 	if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != RESET) {
+void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs){
+ 	if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != RESET) {
 
-//     /* Retrieve Rx messages from RX FIFO0 */
-// 		uint8_t RxData_motor[8] = {};
-//     FDCAN_RxHeaderTypeDef RxHeader_motor;
-// 		if (HAL_OK != HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO0, &RxHeader_motor, RxData_motor)) {
-// 			printf("fdcan_getrxmessage_motor is error\r\n");
-// 			Error_Handler();
-// 		}
-// 		/*receive robomas's status*/
-// 		for (int i=0; i < 8; i++){
-// 			if (RxHeader_motor.Identifier == (robomas[i].CANID)) {
-// 				robomas[i].actangle = (int16_t)((RxData_motor[0] << 8) | RxData_motor[1]);
-// 				robomas[i].actVel = (int16_t)((RxData_motor[2] << 8) | RxData_motor[3]);
-// 				robomas[i].actCurrent = (int16_t)((RxData_motor[4] << 8) | RxData_motor[5]);
-// 			}
-// 		}
-// 	}
-// }
+    /* Retrieve Rx messages from RX FIFO0 */
+		uint8_t RxData_motor[8] = {};
+    FDCAN_RxHeaderTypeDef RxHeader_motor;
+ 		if (HAL_OK != HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO0, &RxHeader_motor, RxData_motor)) {
+ 			printf("fdcan_getrxmessage_motor is error\r\n");
+ 			Error_Handler();
+ 		}
+		/*receive robomas's status*/
+ 		for (int i=0; i < 4; i++){
+ 			if (RxHeader_motor.Identifier == (robomas[i].CANID)) {
+ 				//robomas[i].actangle = (int16_t)((RxData_motor[0] << 8) | RxData_motor[1]);
+ 				robomas[i].actVel = (int16_t)((RxData_motor[2] << 8) | RxData_motor[3]);
+ 				//robomas[i].actCurrent = (int16_t)((RxData_motor[4] << 8) | RxData_motor[5]);
+ 			}
+ 		}
+ 	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	
+	if (&htim6 == htim) {
+		float k_p = 7, k_i = 0.5, k_d = 0.1;
+		for (int i = 0; i < 4; i++){
+			robomas[i].hensa = robomas[i].trgVel - robomas[i].actVel;
+			if (robomas[i].hensa >= 1000) robomas[i].hensa = 1000;
+			else if (robomas[i].hensa <= -1000) robomas[i].hensa = -1000;
+			float d = (robomas[i].p_actVel - robomas[i].actVel) / 0.001f;
+			robomas[i].ind += robomas[i].hensa*0.001f;
+			if (d >= 30000) d = 30000;
+			else if (d <= -30000) d = -30000;
+			if (robomas[i].ind >= 10000) robomas[i].ind = 10000;
+			else if (robomas[i].ind <= -10000) robomas[i].ind = -10000;
+
+
+			float t = k_p*robomas[i].hensa;
+			if (t>=10000) t = 10000;
+			else if (t<=-10000) t = -10000;
+			robomas[i].cu = (int16_t)(t+k_i*robomas[i].ind+k_d*d);
+			if (robomas[i].cu <= -10000) robomas[i].cu = -10000;
+			else if (robomas[i].cu >= 10000) robomas[i].cu = 10000;
+
+			robomas[i].p_actVel = robomas[i].actVel;
+
+		}
+    SendMotorCurrent(robomas[0].cu, robomas[1].cu, robomas[2].cu, robomas[3].cu);
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -217,22 +252,35 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM6_Init();
-  MX_USART2_UART_Init();
   MX_FDCAN3_Init();
+  MX_FDCAN1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim6); // Start TIM6 in interrupt mode
   HAL_UART_Receive_IT(&huart2, &rxChar, 1); // Start UART reception in interrupt mode
   //講習にて導入　 
   __HAL_RCC_CLEAR_RESET_FLAGS(); // Clear reset flags
   if (HAL_OK != motor_CAN_RxTxSettings_init(&TxHeader_motor)) Error_Handler();
-
+  //モーターのCANIDを設定
+  robomas[0].CANID = 0x201;
+  robomas[1].CANID = 0x202;
+  robomas[2].CANID = 0x203;
+  robomas[3].CANID = 0x204;
+  //一応初期化
+  for (int i = 0; i < 4; i++){
+    robomas[i].trgVel = 0;
+    robomas[i].actVel = 0;
+    robomas[i].p_actVel = 0;
+    robomas[i].hensa = 0;
+    robomas[i].ind = 0;
+    robomas[i].cu = 0;
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    uint8_t txdata[8] = {0 ,1 ,2,3,4,5,6,7}; // Example data to send
+    /*uint8_t txdata[8] = {0 ,1 ,2,3,4,5,6,7}; // Example data to send
     int16_t cu = 842; // Example current value
     txdata[0] = (uint8_t)(cu >> 8);
     txdata[1] = (uint8_t)(cu & 0xFF);
@@ -244,7 +292,12 @@ int main(void)
     txdata[7] = (uint8_t)(cu & 0xFF);
     CAN_SEND(0x200, txdata, &hfdcan3, &TxHeader_motor); // Send CAN message
     HAL_Delay(100);
-
+    */
+   Vx = 0.0;
+   Vy = 0.0;
+   omega = 0.0;  //1.0くらいを想定している
+   OmniKinematics();
+   HAL_Delay(100);
     
     /* USER CODE END WHILE */
 
@@ -297,6 +350,49 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief FDCAN1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_FDCAN1_Init(void)
+{
+
+  /* USER CODE BEGIN FDCAN1_Init 0 */
+
+  /* USER CODE END FDCAN1_Init 0 */
+
+  /* USER CODE BEGIN FDCAN1_Init 1 */
+
+  /* USER CODE END FDCAN1_Init 1 */
+  hfdcan1.Instance = FDCAN1;
+  hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
+  hfdcan1.Init.FrameFormat = FDCAN_FRAME_FD_BRS;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
+  hfdcan1.Init.AutoRetransmission = DISABLE;
+  hfdcan1.Init.TransmitPause = DISABLE;
+  hfdcan1.Init.ProtocolException = DISABLE;
+  hfdcan1.Init.NominalPrescaler = 4;
+  hfdcan1.Init.NominalSyncJumpWidth = 1;
+  hfdcan1.Init.NominalTimeSeg1 = 15;
+  hfdcan1.Init.NominalTimeSeg2 = 4;
+  hfdcan1.Init.DataPrescaler = 2;
+  hfdcan1.Init.DataSyncJumpWidth = 1;
+  hfdcan1.Init.DataTimeSeg1 = 15;
+  hfdcan1.Init.DataTimeSeg2 = 4;
+  hfdcan1.Init.StdFiltersNbr = 1;
+  hfdcan1.Init.ExtFiltersNbr = 0;
+  hfdcan1.Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
+  if (HAL_FDCAN_Init(&hfdcan1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN FDCAN1_Init 2 */
+
+  /* USER CODE END FDCAN1_Init 2 */
+
 }
 
 /**
@@ -360,9 +456,9 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
-  htim6.Init.Prescaler = 1999;
+  htim6.Init.Prescaler = 79;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 39999;
+  htim6.Init.Period = 999;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -381,79 +477,18 @@ static void MX_TIM6_Init(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetTxFifoThreshold(&huart2, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetRxFifoThreshold(&huart2, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_DisableFifoMode(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : PD2 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
@@ -462,7 +497,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-//運動学オムニ
+//逆運動学オムニ
 void OmniKinematics(void){
   motor_speed_A = INV_SQRT_2 * (Vx - Vy) - omega * R;
   motor_speed_B = INV_SQRT_2 * (Vx + Vy) - omega * R;
@@ -479,68 +514,62 @@ void OmniKinematics(void){
     motor_speed_C /= max_speed;
     motor_speed_D /= max_speed;
   }
-  //電流値に変換
-  current_A = (int16_t)(motor_speed_A * 10000.0f);
-  current_B = (int16_t)(motor_speed_B * 10000.0f);
-  current_C = (int16_t)(motor_speed_C * 10000.0f);
-  current_D = (int16_t)(motor_speed_D * 10000.0f);
-
+  //PIDにtrgVelを渡す
+  robomas[0].trgVel = motor_speed_A*3000;
+  robomas[1].trgVel = motor_speed_B*3000;
+  robomas[2].trgVel = motor_speed_C*3000;
+  robomas[3].trgVel = motor_speed_D*3000;
 }
 
-//ESP32からの速度指令を受け取るためのUART割り込みコールバック関数
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-  if (huart->Instance == USART2) { // Check if the interrupt is from USART2
-    if (rxChar == '\n') { // Check for newline character
-      rxBuf[rxIndex] = '\0'; // Null-terminate the string
-      rxFlag = 1; // Set the flag to indicate a complete command has been received
-      rxIndex = 0; // Reset index for next command
-    } else {
-      rxBuf[rxIndex++] = rxChar; // Store received character and increment index
+// //ESP32からの速度指令を受け取るためのUART割り込みコールバック関数
+// void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+//   if (huart->Instance == USART2) { // Check if the interrupt is from USART2
+//     if (rxChar == '\n') { // Check for newline character
+//       rxBuf[rxIndex] = '\0'; // Null-terminate the string
+//       rxFlag = 1; // Set the flag to indicate a complete command has been received
+//       rxIndex = 0; // Reset index for next command
+//     } else {
+//       rxBuf[rxIndex++] = rxChar; // Store received character and increment index
       
-      if (rxIndex >= sizeof(rxBuf) - 1) { // Prevent buffer overflow
-        rxIndex = 0; // Reset index if buffer is full
-      }
-    }
-    HAL_UART_Receive_IT(&huart2, &rxChar, 1); // Restart UART reception in interrupt mode
-  }
-}
+//       if (rxIndex >= sizeof(rxBuf) - 1) { // Prevent buffer overflow
+//         rxIndex = 0; // Reset index if buffer is full
+//       }
+//     }
+//     HAL_UART_Receive_IT(&huart2, &rxChar, 1); // Restart UART reception in interrupt mode
+//   }
+// }
 
 //電流値の送信関数
 void SendMotorCurrent(
-  int16_t current_A,
-  int16_t current_B,
-  int16_t current_C,
-  int16_t current_D)
+    int16_t current_A,
+    int16_t current_B,
+    int16_t current_C,
+    int16_t current_D)
 {
-  txHeader.Identifier = 0x200; // CAN ID
-  txHeader.IdType = FDCAN_STANDARD_ID; // Standard ID
-  txHeader.TxFrameType = FDCAN_DATA_FRAME; // Data frame
-  txHeader.DataLength = FDCAN_DLC_BYTES_8; // Data length code
-  txHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE; // Error state indicator
-  txHeader.BitRateSwitch = FDCAN_BRS_OFF; // Bit rate switching
-  txHeader.FDFormat = FDCAN_CLASSIC_CAN; // Classic CAN format
-  txHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS; // No Tx events
-  txHeader.MessageMarker = 0; // Message marker
+    TxData[0] = (current_A >> 8) & 0xFF;
+    TxData[1] = current_A & 0xFF;
 
-  TxData[0] = (current_A >> 8) & 0xFF;
-  TxData[1] = current_A & 0xFF;
+    TxData[2] = (current_B >> 8) & 0xFF;
+    TxData[3] = current_B & 0xFF;
 
-  TxData[2] = (current_B >> 8) & 0xFF;
-  TxData[3] = current_B & 0xFF;
+    TxData[4] = (current_C >> 8) & 0xFF;
+    TxData[5] = current_C & 0xFF;
 
-  TxData[4] = (current_C >> 8) & 0xFF;
-  TxData[5] = current_C & 0xFF;
+    TxData[6] = (current_D >> 8) & 0xFF;
+    TxData[7] = current_D & 0xFF;
 
-  TxData[6] = (current_D >> 8) & 0xFF;
-  TxData[7] = current_D & 0xFF;
-
-  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan3, &txHeader, TxData);
+    CAN_SEND(
+        0x200,
+        TxData,
+        &hfdcan3,
+        &TxHeader_motor
+    );
 }
 
-void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs){
+
+/*void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs){
 	if (RESET != (RxFifo1ITs & FDCAN_IT_RX_FIFO1_NEW_MESSAGE)) {
 
-      //* Retrieve Rx messages from RX FIFO1 */
 		uint8_t RxData[64] = {};
     FDCAN_RxHeaderTypeDef RxHeader;
 		if (HAL_OK != HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO1, &RxHeader, RxData)) {
@@ -579,7 +608,7 @@ void interboard_comms_CAN_txheader_init(FDCAN_TxHeaderTypeDef *Htxheader)
   Htxheader->TxEventFifoControl = FDCAN_NO_TX_EVENTS;
   Htxheader->MessageMarker = 0;
 }
-
+*/
 
 
 
