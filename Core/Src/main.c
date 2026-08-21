@@ -34,6 +34,7 @@
 /* USER CODE BEGIN PD */
 #define INV_SQRT_2 0.70710678f // √2分の１の定義
 #define CAN_ID_YAW 0x103 //IMU基盤からの角度を受け取るCANID
+#define CAN_ID_CONTROLLER 0x105 //ESP32からの速度指令を受け取るCANID
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -255,6 +256,15 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,
                 cos_yaw = cosf(yaw_rx);
                 break;
             }
+            case CAN_ID_CONTROLLER:
+            {
+                // 速度指令を受信した場合の処理
+                Vx = ((int8_t)RxData[0]) / 128.0f;
+                Vy = ((int8_t)RxData[1]) / 128.0f;
+                omega = ((int8_t)RxData[2]) / 128.0f;
+
+                break;
+            }
             default:
                 break;
         }
@@ -365,10 +375,6 @@ int main(void)
     CAN_SEND(0x200, txdata, &hfdcan3, &TxHeader_motor); // Send CAN message
     HAL_Delay(100);
     */
-   Vx = 0.0;
-   Vy = 0.0;
-   omega = 0.0;  //1.0くらいを想定している
-   yaw_rx = 0.0; //IMU基盤からの角度を受け取るための変数
    OmniKinematics();
    HAL_Delay(100);
     
@@ -639,26 +645,6 @@ void SendMotorCurrent(
     );
 }
 
-
-void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs){
-	if (RESET != (RxFifo1ITs & FDCAN_IT_RX_FIFO1_NEW_MESSAGE)) {
-
-		uint8_t RxData[64] = {};
-    FDCAN_RxHeaderTypeDef RxHeader;
-		if (HAL_OK != HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, RxData)) {
-			printf("fdcan_getrxmessage is error\r\n");
-			Error_Handler();
-		}
-    switch (RxHeader.Identifier)
-    {
-      case CAN_ID_YAW:
-        u8_to_float(RxData, (float*)&yaw_rx, 4);
-        break;
-        default:
-        break;
-    }
-	}
-}
 
 
 void interboard_comms_CAN_filter_init(FDCAN_FilterTypeDef *Hfdcan_Filter_Settings)
