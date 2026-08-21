@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,7 +33,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define INV_SQRT_2 0.70710678f // √2分の１の定義
-
+#define CAN_ID_YAW 0x103 //IMU基盤からの角度を受け取るCANID
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -57,14 +56,18 @@ volatile float omega = 0.0f;
 //車体中心からオムニまでの長さ
 const float R = 0.21f;
 
-//ESP32からの速度指令を受け取るための箱
-char rxBuf[64];
-volatile uint8_t rxFlag = 0; // 受信完了フラグ
-uint8_t rxChar; // 受信文字
-volatile uint8_t rxIndex = 0; // 受信箱のインデックス
+//IMU基盤からの角度を受け取るための変数
+volatile float yaw_rx = 0.0f;
+
+// //ESP32からの速度指令を受け取るための箱
+// char rxBuf[64];
+// volatile uint8_t rxFlag = 0; // 受信完了フラグ
+// uint8_t rxChar; // 受信文字
+// volatile uint8_t rxIndex = 0; // 受信箱のインデックス
 
 //講習モーターのためのテキストヘッダー
 FDCAN_TxHeaderTypeDef TxHeader_motor;
+FDCAN_TxHeaderTypeDef TxHeader_IMU;
 
 //モーター変数　反時計回りに右上からABCD
 float motor_speed_A = 0.0f;
@@ -99,7 +102,10 @@ static void MX_FDCAN1_Init(void);
 /* USER CODE BEGIN PFP */
 void OmniKinematics(void);
 void SendMotorCurrent(int16_t current_A, int16_t current_B, int16_t current_C, int16_t current_D);
-
+HAL_StatusTypeDef interboard_comms_CAN_RxTxSettings_init(FDCAN_TxHeaderTypeDef *Htxheader);
+void interboard_comms_CAN_filter_init(FDCAN_FilterTypeDef *Hfdcan_Filter_Settings);
+void interboard_comms_CAN_txheader_init(FDCAN_TxHeaderTypeDef *Htxheader);
+void u8_to_float(uint8_t *req, float *des, uint32_t uint8_len);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -170,6 +176,35 @@ HAL_StatusTypeDef motor_CAN_RxTxSettings_init(FDCAN_TxHeaderTypeDef *Htxheader)
   return HAL_OK;
 }
 
+HAL_StatusTypeDef interboard_comms_CAN_RxTxSettings_init(FDCAN_TxHeaderTypeDef *Htxheader)
+{
+  FDCAN_FilterTypeDef FDCAN_Filter_settings;
+  interboard_comms_CAN_filter_init(&FDCAN_Filter_settings);
+  interboard_comms_CAN_txheader_init(Htxheader);
+  if (HAL_OK != HAL_FDCAN_ConfigFilter(&hfdcan1, &FDCAN_Filter_settings))
+  {
+    printf("fdcan_configfilter is error\r\n");
+    return HAL_ERROR;
+  }
+  if (HAL_OK != HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_REJECT, FDCAN_FILTER_REJECT, FDCAN_FILTER_REMOTE, FDCAN_FILTER_REMOTE))
+  {
+    printf("fdcan_configglobalfilter is error\r\n");
+    return HAL_ERROR;
+  }
+  if (HAL_OK != HAL_FDCAN_Start(&hfdcan1))
+  {
+    printf("fdcan_start is error\r\n");
+    return HAL_ERROR;
+  }
+  if (HAL_OK != HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO1_NEW_MESSAGE, 0))
+  {
+    printf("fdcan_activatenotification is error\r\n");
+    return HAL_ERROR;
+  }
+
+  return HAL_OK;
+}
+
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs){
  	if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != RESET) {
 
@@ -190,6 +225,37 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
  		}
  	}
 }
+
+void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,
+                               uint32_t RxFifo1ITs)
+{
+    if (RxFifo1ITs & FDCAN_IT_RX_FIFO1_NEW_MESSAGE)
+    {
+        uint8_t RxData[64];
+        FDCAN_RxHeaderTypeDef RxHeader;
+        if (HAL_FDCAN_GetRxMessage(
+                hfdcan,
+                FDCAN_RX_FIFO1,
+                &RxHeader,
+                RxData) != HAL_OK)
+        {
+            Error_Handler();
+        }
+        switch (RxHeader.Identifier)
+        {
+            case CAN_ID_YAW:
+            {
+                u8_to_float(RxData, (float*)&yaw_rx, 4);
+                // yaw_rxに受信値が入る
+                break;
+            }
+            default:
+                break;
+        }
+    }
+}
+
+
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	
@@ -256,10 +322,10 @@ int main(void)
   MX_FDCAN1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim6); // Start TIM6 in interrupt mode
-  HAL_UART_Receive_IT(&huart2, &rxChar, 1); // Start UART reception in interrupt mode
   //講習にて導入　 
   __HAL_RCC_CLEAR_RESET_FLAGS(); // Clear reset flags
   if (HAL_OK != motor_CAN_RxTxSettings_init(&TxHeader_motor)) Error_Handler();
+  if (HAL_OK != interboard_comms_CAN_RxTxSettings_init(&TxHeader_IMU)) Error_Handler();
   //モーターのCANIDを設定
   robomas[0].CANID = 0x201;
   robomas[1].CANID = 0x202;
@@ -567,24 +633,26 @@ void SendMotorCurrent(
 }
 
 
-/*void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs){
+void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs){
 	if (RESET != (RxFifo1ITs & FDCAN_IT_RX_FIFO1_NEW_MESSAGE)) {
 
 		uint8_t RxData[64] = {};
     FDCAN_RxHeaderTypeDef RxHeader;
-		if (HAL_OK != HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO1, &RxHeader, RxData)) {
+		if (HAL_OK != HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, RxData)) {
 			printf("fdcan_getrxmessage is error\r\n");
 			Error_Handler();
 		}
     switch (RxHeader.Identifier)
     {
-      case 0x200:
+      case CAN_ID_YAW:
+        u8_to_float(RxData, (float*)&yaw_rx, 4);
         break;
         default:
         break;
     }
 	}
 }
+
 
 void interboard_comms_CAN_filter_init(FDCAN_FilterTypeDef *Hfdcan_Filter_Settings)
 {
@@ -608,7 +676,21 @@ void interboard_comms_CAN_txheader_init(FDCAN_TxHeaderTypeDef *Htxheader)
   Htxheader->TxEventFifoControl = FDCAN_NO_TX_EVENTS;
   Htxheader->MessageMarker = 0;
 }
-*/
+
+//受信用
+void u8_to_float(uint8_t *req, float *des, uint32_t uint8_len)
+{
+  union IntAndFloat {
+    uint32_t ival;
+    float fval;
+  };
+  for(int i = 0; i < uint8_len/4; i++){
+    uint32_t f32_u32 = ((req[i*4] << 24) | (req[i*4+1] << 16) | (req[i*4+2] << 8) | (req[i*4+3]));
+    union IntAndFloat target;
+    target.ival = f32_u32;
+    des[i] = target.fval;
+  }
+}
 
 
 
