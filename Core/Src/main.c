@@ -56,8 +56,11 @@ volatile float omega = 0.0f;
 //車体中心からオムニまでの長さ
 const float R = 0.21f;
 
-//IMU基盤からの角度を受け取るための変数
+//IMU基盤からの角度を受け取るための変数→sin cosの計算に使う
 volatile float yaw_rx = 0.0f;
+volatile float sin_yaw = 0.0f;
+volatile float cos_yaw = 0.0f;
+
 
 // //ESP32からの速度指令を受け取るための箱
 // char rxBuf[64];
@@ -247,6 +250,9 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,
             {
                 u8_to_float(RxData, (float*)&yaw_rx, 4);
                 // yaw_rxに受信値が入る
+                yaw_rx = yaw_rx * (3.14159265358979323846f / 180.0f); // 角度をラジアンに変換
+                sin_yaw = sinf(yaw_rx);
+                cos_yaw = cosf(yaw_rx);
                 break;
             }
             default:
@@ -362,6 +368,7 @@ int main(void)
    Vx = 0.0;
    Vy = 0.0;
    omega = 0.0;  //1.0くらいを想定している
+   yaw_rx = 0.0; //IMU基盤からの角度を受け取るための変数
    OmniKinematics();
    HAL_Delay(100);
     
@@ -565,10 +572,10 @@ static void MX_GPIO_Init(void)
 
 //逆運動学オムニ
 void OmniKinematics(void){
-  motor_speed_A = INV_SQRT_2 * (Vx - Vy) - omega * R;
-  motor_speed_B = INV_SQRT_2 * (Vx + Vy) - omega * R;
-  motor_speed_C = INV_SQRT_2 * (- Vx + Vy) - omega * R;
-  motor_speed_D = INV_SQRT_2 * (- Vx - Vy) - omega * R;
+  motor_speed_A = cos_yaw * Vx + sin_yaw * Vy - omega * R;
+  motor_speed_B = cos_yaw * Vx + sin_yaw * Vy - omega * R;
+  motor_speed_C = - cos_yaw * Vx - sin_yaw * Vy - omega * R;
+  motor_speed_D = - cos_yaw * Vx - sin_yaw * Vy - omega * R;
   //正規化
   float max_speed = fabsf(motor_speed_A);
   if (fabsf(motor_speed_B) > max_speed) {max_speed = fabsf(motor_speed_B);}
