@@ -252,8 +252,10 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,
                 u8_to_float(RxData, (float*)&yaw_rx, 4);
                 // yaw_rxに受信値が入る
                 yaw_rx = yaw_rx * (3.14159265358979323846f / 180.0f); // 角度をラジアンに変換
-                sin_yaw = sinf(yaw_rx);
-                cos_yaw = cosf(yaw_rx);
+                sin_yawplus = sinf(yaw_rx+3.14159265358979323846f/4.0f);
+                sin_yawminus = sinf(yaw_rx-3.14159265358979323846f/4.0f);
+                cos_yawplus = cosf(yaw_rx+3.14159265358979323846f/4.0f);
+                cos_yawminus = cosf(yaw_rx-3.14159265358979323846f/4.0f);
                 break;
             }
             case CAN_ID_CONTROLLER:
@@ -578,10 +580,10 @@ static void MX_GPIO_Init(void)
 
 //逆運動学オムニ
 void OmniKinematics(void){
-  motor_speed_A = cos_yaw * Vx + sin_yaw * Vy - omega * R;
-  motor_speed_B = cos_yaw * Vx + sin_yaw * Vy - omega * R;
-  motor_speed_C = - cos_yaw * Vx - sin_yaw * Vy - omega * R;
-  motor_speed_D = - cos_yaw * Vx - sin_yaw * Vy - omega * R;
+  motor_speed_A = sin_yawplus * Vx - cos_yawplus * Vy - omega * R;
+  motor_speed_B = - sin_yawminus * Vx + cos_yawminus * Vy - omega * R;
+  motor_speed_C = - sin_yawplus * Vx + cos_yawplus * Vy - omega * R;
+  motor_speed_D = sin_yawminus * Vx - cos_yawminus * Vy - omega * R;
   //正規化
   float max_speed = fabsf(motor_speed_A);
   if (fabsf(motor_speed_B) > max_speed) {max_speed = fabsf(motor_speed_B);}
