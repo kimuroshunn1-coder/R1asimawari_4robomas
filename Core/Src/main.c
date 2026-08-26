@@ -35,6 +35,8 @@
 #define INV_SQRT_2 0.70710678f // √2分の１の定義
 #define CAN_ID_YAW 0x103 //IMU基盤からの角度を受け取るCANID
 #define CAN_ID_CONTROLLER 0x105 //ESP32からの速度指令を受け取るCANID
+
+#define PI 3.14159265358979323846f
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -59,9 +61,10 @@ const float R = 0.21f;
 
 //IMU基盤からの角度を受け取るための変数→sin cosの計算に使う
 volatile float yaw_rx = 0.0f;
-volatile float sin_yaw = 0.0f;
-volatile float cos_yaw = 0.0f;
-
+volatile float sin_yawminus = 0.0f;
+volatile float cos_yawminus = 0.0f;
+volatile float sin_yawplus = 0.0f;
+volatile float cos_yawplus = 0.0f;
 
 // //ESP32からの速度指令を受け取るための箱
 // char rxBuf[64];
@@ -251,11 +254,11 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,
             {
                 u8_to_float(RxData, (float*)&yaw_rx, 4);
                 // yaw_rxに受信値が入る
-                yaw_rx = yaw_rx * (3.14159265358979323846f / 180.0f); // 角度をラジアンに変換
-                sin_yawplus = sinf(yaw_rx+3.14159265358979323846f/4.0f);
-                sin_yawminus = sinf(yaw_rx-3.14159265358979323846f/4.0f);
-                cos_yawplus = cosf(yaw_rx+3.14159265358979323846f/4.0f);
-                cos_yawminus = cosf(yaw_rx-3.14159265358979323846f/4.0f);
+                yaw_rx = yaw_rx * (PI / 180.0f); // 角度をラジアンに変換
+                sin_yawplus = sinf(yaw_rx+PI/4.0f);
+                sin_yawminus = sinf(yaw_rx-PI/4.0f);
+                cos_yawplus = cosf(yaw_rx+PI/4.0f);
+                cos_yawminus = cosf(yaw_rx-PI/4.0f);
                 break;
             }
             case CAN_ID_CONTROLLER:
@@ -358,12 +361,23 @@ int main(void)
     robomas[i].ind = 0;
     robomas[i].cu = 0;
   }
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+  Vx = 1.0f;
+  Vy = 0.0f;
+  omega = 0.0f;
+
+  sin_yawplus = sinf(0+PI/4.0f);
+  sin_yawminus = sinf(0-PI/4.0f);
+  cos_yawplus = cosf(0+PI/4.0f);
+  cos_yawminus = cosf(0-PI/4.0f);
     /*uint8_t txdata[8] = {0 ,1 ,2,3,4,5,6,7}; // Example data to send
     int16_t cu = 842; // Example current value
     txdata[0] = (uint8_t)(cu >> 8);
@@ -578,7 +592,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-//逆運動学オムニ
+//運動学オムニ
 void OmniKinematics(void){
   motor_speed_A = sin_yawplus * Vx - cos_yawplus * Vy - omega * R;
   motor_speed_B = - sin_yawminus * Vx + cos_yawminus * Vy - omega * R;
