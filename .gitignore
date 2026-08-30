@@ -1,3 +1,16 @@
-build
+# CMake / STM32 build outputs
+/build/
+/**/build/
+/**/CMakeFiles/
+/**/CMakeCache.txt
+/**/cmake_install.cmake
+/**/compile_commands.json
+/**/*.elf
+/**/*.hex
+/**/*.bin
+/**/*.map
+/**/*.lst
+
+# ST scratch files
 mx.scratch
 !.settings
