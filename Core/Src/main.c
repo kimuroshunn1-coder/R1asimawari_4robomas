@@ -57,7 +57,7 @@ volatile float Vy = 0.0f;
 volatile float omega = 0.0f;
 
 //車体中心からオムニまでの長さ
-const float R = 0.21f;
+const float R = 0.35f;
 
 //IMU基盤からの角度を受け取るための変数→sin cosの計算に使う
 volatile float yaw_rx = 0.0f;
@@ -370,14 +370,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  Vx = 1.0f;
-  Vy = 0.0f;
-  omega = 0.0f;
+  // Vx = 0.0f;
+  // Vy = 0.0f;
+  // omega = 1.0f;
 
-  sin_yawplus = sinf(0+PI/4.0f);
-  sin_yawminus = sinf(0-PI/4.0f);
-  cos_yawplus = cosf(0+PI/4.0f);
-  cos_yawminus = cosf(0-PI/4.0f);
+  // sin_yawplus = sinf(0+PI/4.0f);
+  // sin_yawminus = sinf(0-PI/4.0f);
+  // cos_yawplus = cosf(0+PI/4.0f);
+  // cos_yawminus = cosf(0-PI/4.0f);
     /*uint8_t txdata[8] = {0 ,1 ,2,3,4,5,6,7}; // Example data to send
     int16_t cu = 842; // Example current value
     txdata[0] = (uint8_t)(cu >> 8);

@@ -2920,7 +2920,7 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
                 0x08000000                g_pfnVectors
                 0x080001d8                        . = ALIGN (0x4)
 
-.text           0x080001d8     0x566c
+.text           0x080001d8     0x5618
                 0x080001d8                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001d8       0x40 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -3122,417 +3122,417 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
  .text.HAL_TIM_PeriodElapsedCallback
                 0x080031c4      0x3ac CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
                 0x080031c4                HAL_TIM_PeriodElapsedCallback
- .text.main     0x08003570      0x17c CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+ .text.main     0x08003570      0x128 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
                 0x08003570                main
  .text.SystemClock_Config
-                0x080036ec       0x98 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x080036ec                SystemClock_Config
+                0x08003698       0x98 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003698                SystemClock_Config
  .text.MX_FDCAN1_Init
-                0x08003784       0x90 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003730       0x90 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
  .text.MX_FDCAN3_Init
-                0x08003814       0x90 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x080037c0       0x90 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
  .text.MX_TIM6_Init
-                0x080038a4       0x6c CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003850       0x6c CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
  .text.MX_GPIO_Init
-                0x08003910       0x30 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x080038bc       0x30 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
  .text.OmniKinematics
-                0x08003940      0x274 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003940                OmniKinematics
+                0x080038ec      0x274 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x080038ec                OmniKinematics
  .text.SendMotorCurrent
-                0x08003bb4       0x98 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003bb4                SendMotorCurrent
+                0x08003b60       0x98 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003b60                SendMotorCurrent
  .text.interboard_comms_CAN_filter_init
-                0x08003c4c       0x3a CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003c4c                interboard_comms_CAN_filter_init
+                0x08003bf8       0x3a CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003bf8                interboard_comms_CAN_filter_init
  .text.interboard_comms_CAN_txheader_init
-                0x08003c86       0x4e CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003c86                interboard_comms_CAN_txheader_init
+                0x08003c32       0x4e CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003c32                interboard_comms_CAN_txheader_init
  .text.u8_to_float
-                0x08003cd4       0x7e CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003cd4                u8_to_float
+                0x08003c80       0x7e CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003c80                u8_to_float
  .text.Error_Handler
-                0x08003d52        0xc CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
-                0x08003d52                Error_Handler
+                0x08003cfe        0xc CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+                0x08003cfe                Error_Handler
  .text.NMI_Handler
-                0x08003d5e        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d5e                NMI_Handler
+                0x08003d0a        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d0a                NMI_Handler
  .text.HardFault_Handler
-                0x08003d66        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d66                HardFault_Handler
+                0x08003d12        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d12                HardFault_Handler
  .text.MemManage_Handler
-                0x08003d6e        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d6e                MemManage_Handler
+                0x08003d1a        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d1a                MemManage_Handler
  .text.BusFault_Handler
-                0x08003d76        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d76                BusFault_Handler
+                0x08003d22        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d22                BusFault_Handler
  .text.UsageFault_Handler
-                0x08003d7e        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d7e                UsageFault_Handler
+                0x08003d2a        0x8 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d2a                UsageFault_Handler
  .text.SVC_Handler
-                0x08003d86        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d86                SVC_Handler
+                0x08003d32        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d32                SVC_Handler
  .text.DebugMon_Handler
-                0x08003d94        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003d94                DebugMon_Handler
+                0x08003d40        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d40                DebugMon_Handler
  .text.PendSV_Handler
-                0x08003da2        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003da2                PendSV_Handler
+                0x08003d4e        0xe CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d4e                PendSV_Handler
  .text.SysTick_Handler
-                0x08003db0        0xc CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003db0                SysTick_Handler
+                0x08003d5c        0xc CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d5c                SysTick_Handler
  .text.FDCAN1_IT0_IRQHandler
-                0x08003dbc       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003dbc                FDCAN1_IT0_IRQHandler
+                0x08003d68       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d68                FDCAN1_IT0_IRQHandler
  .text.FDCAN1_IT1_IRQHandler
-                0x08003dd0       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003dd0                FDCAN1_IT1_IRQHandler
+                0x08003d7c       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d7c                FDCAN1_IT1_IRQHandler
  .text.TIM6_DAC_IRQHandler
-                0x08003de4       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003de4                TIM6_DAC_IRQHandler
+                0x08003d90       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003d90                TIM6_DAC_IRQHandler
  .text.FDCAN3_IT0_IRQHandler
-                0x08003df8       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003df8                FDCAN3_IT0_IRQHandler
+                0x08003da4       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003da4                FDCAN3_IT0_IRQHandler
  .text.FDCAN3_IT1_IRQHandler
-                0x08003e0c       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08003e0c                FDCAN3_IT1_IRQHandler
+                0x08003db8       0x14 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08003db8                FDCAN3_IT1_IRQHandler
  .text.HAL_MspInit
-                0x08003e20       0x48 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
-                0x08003e20                HAL_MspInit
+                0x08003dcc       0x48 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+                0x08003dcc                HAL_MspInit
  .text.HAL_FDCAN_MspInit
-                0x08003e68      0x1a0 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
-                0x08003e68                HAL_FDCAN_MspInit
+                0x08003e14      0x1a0 CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+                0x08003e14                HAL_FDCAN_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x08004008       0x4c CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
-                0x08004008                HAL_TIM_Base_MspInit
- .text._sbrk    0x08004054       0x6c CMakeFiles/f3rc2026_practice.dir/Core/Src/sysmem.c.obj
-                0x08004054                _sbrk
- .text._read    0x080040c0       0x3a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x080040c0                _read
- .text._write   0x080040fa       0x38 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x080040fa                _write
- .text._close   0x08004132       0x18 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x08004132                _close
- .text._fstat   0x0800414a       0x20 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x0800414a                _fstat
- .text._isatty  0x0800416a       0x16 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x0800416a                _isatty
- .text._lseek   0x08004180       0x1a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
-                0x08004180                _lseek
- *fill*         0x0800419a        0x2 
+                0x08003fb4       0x4c CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+                0x08003fb4                HAL_TIM_Base_MspInit
+ .text._sbrk    0x08004000       0x6c CMakeFiles/f3rc2026_practice.dir/Core/Src/sysmem.c.obj
+                0x08004000                _sbrk
+ .text._read    0x0800406c       0x3a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x0800406c                _read
+ .text._write   0x080040a6       0x38 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x080040a6                _write
+ .text._close   0x080040de       0x18 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x080040de                _close
+ .text._fstat   0x080040f6       0x20 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x080040f6                _fstat
+ .text._isatty  0x08004116       0x16 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x08004116                _isatty
+ .text._lseek   0x0800412c       0x1a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+                0x0800412c                _lseek
+ *fill*         0x08004146        0x2 
  .text.Reset_Handler
-                0x0800419c       0x50 CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
-                0x0800419c                Reset_Handler
+                0x08004148       0x50 CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
+                0x08004148                Reset_Handler
  .text.Default_Handler
-                0x080041ec        0x2 CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
-                0x080041ec                RTC_Alarm_IRQHandler
-                0x080041ec                EXTI2_IRQHandler
-                0x080041ec                TIM8_TRG_COM_IRQHandler
-                0x080041ec                TIM8_CC_IRQHandler
-                0x080041ec                HRTIM1_Master_IRQHandler
-                0x080041ec                SPI4_IRQHandler
-                0x080041ec                TIM1_CC_IRQHandler
-                0x080041ec                HRTIM1_FLT_IRQHandler
-                0x080041ec                HRTIM1_TIMF_IRQHandler
-                0x080041ec                USB_HP_IRQHandler
-                0x080041ec                CORDIC_IRQHandler
-                0x080041ec                HRTIM1_TIMD_IRQHandler
-                0x080041ec                DMA2_Channel8_IRQHandler
-                0x080041ec                EXTI3_IRQHandler
-                0x080041ec                I2C3_ER_IRQHandler
-                0x080041ec                EXTI0_IRQHandler
-                0x080041ec                I2C2_EV_IRQHandler
-                0x080041ec                FPU_IRQHandler
-                0x080041ec                TIM1_UP_TIM16_IRQHandler
-                0x080041ec                ADC1_2_IRQHandler
-                0x080041ec                HRTIM1_TIME_IRQHandler
-                0x080041ec                SPI1_IRQHandler
-                0x080041ec                HRTIM1_TIMC_IRQHandler
-                0x080041ec                TIM8_UP_IRQHandler
-                0x080041ec                DMA2_Channel2_IRQHandler
-                0x080041ec                DMA1_Channel4_IRQHandler
-                0x080041ec                TIM20_TRG_COM_IRQHandler
-                0x080041ec                USART3_IRQHandler
-                0x080041ec                DMA1_Channel7_IRQHandler
-                0x080041ec                UART5_IRQHandler
-                0x080041ec                ADC3_IRQHandler
-                0x080041ec                TIM4_IRQHandler
-                0x080041ec                DMA2_Channel1_IRQHandler
-                0x080041ec                QUADSPI_IRQHandler
-                0x080041ec                I2C1_EV_IRQHandler
-                0x080041ec                DMA1_Channel6_IRQHandler
-                0x080041ec                UART4_IRQHandler
-                0x080041ec                DMA2_Channel4_IRQHandler
-                0x080041ec                TIM3_IRQHandler
-                0x080041ec                RCC_IRQHandler
-                0x080041ec                TIM20_UP_IRQHandler
-                0x080041ec                DMA1_Channel1_IRQHandler
-                0x080041ec                Default_Handler
-                0x080041ec                DMA2_Channel7_IRQHandler
-                0x080041ec                RTC_TAMP_LSECSS_IRQHandler
-                0x080041ec                FMAC_IRQHandler
-                0x080041ec                EXTI15_10_IRQHandler
-                0x080041ec                DMA1_Channel8_IRQHandler
-                0x080041ec                HRTIM1_TIMA_IRQHandler
-                0x080041ec                TIM7_DAC_IRQHandler
-                0x080041ec                TIM5_IRQHandler
-                0x080041ec                UCPD1_IRQHandler
-                0x080041ec                I2C3_EV_IRQHandler
-                0x080041ec                EXTI9_5_IRQHandler
-                0x080041ec                RTC_WKUP_IRQHandler
-                0x080041ec                PVD_PVM_IRQHandler
-                0x080041ec                SPI2_IRQHandler
-                0x080041ec                ADC5_IRQHandler
-                0x080041ec                DMA2_Channel5_IRQHandler
-                0x080041ec                CRS_IRQHandler
-                0x080041ec                DMA1_Channel5_IRQHandler
-                0x080041ec                USB_LP_IRQHandler
-                0x080041ec                EXTI4_IRQHandler
-                0x080041ec                RNG_IRQHandler
-                0x080041ec                HRTIM1_TIMB_IRQHandler
-                0x080041ec                TIM1_TRG_COM_TIM17_IRQHandler
-                0x080041ec                FDCAN2_IT1_IRQHandler
-                0x080041ec                DMA1_Channel3_IRQHandler
-                0x080041ec                ADC4_IRQHandler
-                0x080041ec                WWDG_IRQHandler
-                0x080041ec                I2C4_EV_IRQHandler
-                0x080041ec                FDCAN2_IT0_IRQHandler
-                0x080041ec                LPUART1_IRQHandler
-                0x080041ec                DMA2_Channel6_IRQHandler
-                0x080041ec                TIM2_IRQHandler
-                0x080041ec                COMP7_IRQHandler
-                0x080041ec                COMP1_2_3_IRQHandler
-                0x080041ec                EXTI1_IRQHandler
-                0x080041ec                USART2_IRQHandler
-                0x080041ec                COMP4_5_6_IRQHandler
-                0x080041ec                TIM20_BRK_IRQHandler
-                0x080041ec                I2C2_ER_IRQHandler
-                0x080041ec                DMA1_Channel2_IRQHandler
-                0x080041ec                TIM8_BRK_IRQHandler
-                0x080041ec                FLASH_IRQHandler
-                0x080041ec                TIM20_CC_IRQHandler
-                0x080041ec                USART1_IRQHandler
-                0x080041ec                SPI3_IRQHandler
-                0x080041ec                I2C1_ER_IRQHandler
-                0x080041ec                FMC_IRQHandler
-                0x080041ec                LPTIM1_IRQHandler
-                0x080041ec                DMAMUX_OVR_IRQHandler
-                0x080041ec                I2C4_ER_IRQHandler
-                0x080041ec                USBWakeUp_IRQHandler
-                0x080041ec                SAI1_IRQHandler
-                0x080041ec                DMA2_Channel3_IRQHandler
-                0x080041ec                TIM1_BRK_TIM15_IRQHandler
- *fill*         0x080041ee        0x2 
- .text.cosf     0x080041f0       0x70 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
-                0x080041f0                cosf
- .text.sinf     0x08004260       0x74 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
-                0x08004260                sinf
+                0x08004198        0x2 CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
+                0x08004198                RTC_Alarm_IRQHandler
+                0x08004198                EXTI2_IRQHandler
+                0x08004198                TIM8_TRG_COM_IRQHandler
+                0x08004198                TIM8_CC_IRQHandler
+                0x08004198                HRTIM1_Master_IRQHandler
+                0x08004198                SPI4_IRQHandler
+                0x08004198                TIM1_CC_IRQHandler
+                0x08004198                HRTIM1_FLT_IRQHandler
+                0x08004198                HRTIM1_TIMF_IRQHandler
+                0x08004198                USB_HP_IRQHandler
+                0x08004198                CORDIC_IRQHandler
+                0x08004198                HRTIM1_TIMD_IRQHandler
+                0x08004198                DMA2_Channel8_IRQHandler
+                0x08004198                EXTI3_IRQHandler
+                0x08004198                I2C3_ER_IRQHandler
+                0x08004198                EXTI0_IRQHandler
+                0x08004198                I2C2_EV_IRQHandler
+                0x08004198                FPU_IRQHandler
+                0x08004198                TIM1_UP_TIM16_IRQHandler
+                0x08004198                ADC1_2_IRQHandler
+                0x08004198                HRTIM1_TIME_IRQHandler
+                0x08004198                SPI1_IRQHandler
+                0x08004198                HRTIM1_TIMC_IRQHandler
+                0x08004198                TIM8_UP_IRQHandler
+                0x08004198                DMA2_Channel2_IRQHandler
+                0x08004198                DMA1_Channel4_IRQHandler
+                0x08004198                TIM20_TRG_COM_IRQHandler
+                0x08004198                USART3_IRQHandler
+                0x08004198                DMA1_Channel7_IRQHandler
+                0x08004198                UART5_IRQHandler
+                0x08004198                ADC3_IRQHandler
+                0x08004198                TIM4_IRQHandler
+                0x08004198                DMA2_Channel1_IRQHandler
+                0x08004198                QUADSPI_IRQHandler
+                0x08004198                I2C1_EV_IRQHandler
+                0x08004198                DMA1_Channel6_IRQHandler
+                0x08004198                UART4_IRQHandler
+                0x08004198                DMA2_Channel4_IRQHandler
+                0x08004198                TIM3_IRQHandler
+                0x08004198                RCC_IRQHandler
+                0x08004198                TIM20_UP_IRQHandler
+                0x08004198                DMA1_Channel1_IRQHandler
+                0x08004198                Default_Handler
+                0x08004198                DMA2_Channel7_IRQHandler
+                0x08004198                RTC_TAMP_LSECSS_IRQHandler
+                0x08004198                FMAC_IRQHandler
+                0x08004198                EXTI15_10_IRQHandler
+                0x08004198                DMA1_Channel8_IRQHandler
+                0x08004198                HRTIM1_TIMA_IRQHandler
+                0x08004198                TIM7_DAC_IRQHandler
+                0x08004198                TIM5_IRQHandler
+                0x08004198                UCPD1_IRQHandler
+                0x08004198                I2C3_EV_IRQHandler
+                0x08004198                EXTI9_5_IRQHandler
+                0x08004198                RTC_WKUP_IRQHandler
+                0x08004198                PVD_PVM_IRQHandler
+                0x08004198                SPI2_IRQHandler
+                0x08004198                ADC5_IRQHandler
+                0x08004198                DMA2_Channel5_IRQHandler
+                0x08004198                CRS_IRQHandler
+                0x08004198                DMA1_Channel5_IRQHandler
+                0x08004198                USB_LP_IRQHandler
+                0x08004198                EXTI4_IRQHandler
+                0x08004198                RNG_IRQHandler
+                0x08004198                HRTIM1_TIMB_IRQHandler
+                0x08004198                TIM1_TRG_COM_TIM17_IRQHandler
+                0x08004198                FDCAN2_IT1_IRQHandler
+                0x08004198                DMA1_Channel3_IRQHandler
+                0x08004198                ADC4_IRQHandler
+                0x08004198                WWDG_IRQHandler
+                0x08004198                I2C4_EV_IRQHandler
+                0x08004198                FDCAN2_IT0_IRQHandler
+                0x08004198                LPUART1_IRQHandler
+                0x08004198                DMA2_Channel6_IRQHandler
+                0x08004198                TIM2_IRQHandler
+                0x08004198                COMP7_IRQHandler
+                0x08004198                COMP1_2_3_IRQHandler
+                0x08004198                EXTI1_IRQHandler
+                0x08004198                USART2_IRQHandler
+                0x08004198                COMP4_5_6_IRQHandler
+                0x08004198                TIM20_BRK_IRQHandler
+                0x08004198                I2C2_ER_IRQHandler
+                0x08004198                DMA1_Channel2_IRQHandler
+                0x08004198                TIM8_BRK_IRQHandler
+                0x08004198                FLASH_IRQHandler
+                0x08004198                TIM20_CC_IRQHandler
+                0x08004198                USART1_IRQHandler
+                0x08004198                SPI3_IRQHandler
+                0x08004198                I2C1_ER_IRQHandler
+                0x08004198                FMC_IRQHandler
+                0x08004198                LPTIM1_IRQHandler
+                0x08004198                DMAMUX_OVR_IRQHandler
+                0x08004198                I2C4_ER_IRQHandler
+                0x08004198                USBWakeUp_IRQHandler
+                0x08004198                SAI1_IRQHandler
+                0x08004198                DMA2_Channel3_IRQHandler
+                0x08004198                TIM1_BRK_TIM15_IRQHandler
+ *fill*         0x0800419a        0x2 
+ .text.cosf     0x0800419c       0x70 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                0x0800419c                cosf
+ .text.sinf     0x0800420c       0x74 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                0x0800420c                sinf
  .text.__kernel_cosf
-                0x080042d4      0x104 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
-                0x080042d4                __kernel_cosf
+                0x08004280      0x104 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                0x08004280                __kernel_cosf
  .text.__kernel_sinf
-                0x080043d8       0x90 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
-                0x080043d8                __kernel_sinf
+                0x08004384       0x90 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                0x08004384                __kernel_sinf
  .text.__ieee754_rem_pio2f
-                0x08004468      0x26c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
-                0x08004468                __ieee754_rem_pio2f
- .text.fabsf    0x080046d4       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
-                0x080046d4                fabsf
+                0x08004414      0x26c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x08004414                __ieee754_rem_pio2f
+ .text.fabsf    0x08004680       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                0x08004680                fabsf
  .text.__kernel_rem_pio2f
-                0x080046e4      0x68c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
-                0x080046e4                __kernel_rem_pio2f
- .text.scalbnf  0x08004d70       0xdc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
-                0x08004d70                scalbnf
- .text.floorf   0x08004e4c       0x94 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
-                0x08004e4c                floorf
- .text.std      0x08004ee0       0x6c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004690      0x68c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x08004690                __kernel_rem_pio2f
+ .text.scalbnf  0x08004d1c       0xdc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                0x08004d1c                scalbnf
+ .text.floorf   0x08004df8       0x94 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                0x08004df8                floorf
+ .text.std      0x08004e8c       0x6c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
  .text.stdio_exit_handler
-                0x08004f4c       0x18 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004ef8       0x18 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
  .text.cleanup_stdio
-                0x08004f64       0x40 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004f10       0x40 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
  .text.global_stdio_init.part.0
-                0x08004fa4       0x40 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004f50       0x40 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
  .text.__sfp_lock_acquire
-                0x08004fe4        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
-                0x08004fe4                __sfp_lock_acquire
+                0x08004f90        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004f90                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x08004ff0        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
-                0x08004ff0                __sfp_lock_release
- .text.__sinit  0x08004ffc       0x30 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
-                0x08004ffc                __sinit
+                0x08004f9c        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004f9c                __sfp_lock_release
+ .text.__sinit  0x08004fa8       0x30 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+                0x08004fa8                __sinit
  .text._fwalk_sglue
-                0x0800502c       0x3c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fwalk.o)
-                0x0800502c                _fwalk_sglue
- .text._puts_r  0x08005068       0xaa C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
-                0x08005068                _puts_r
- *fill*         0x08005112        0x2 
- .text.puts     0x08005114       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
-                0x08005114                puts
- .text.__sread  0x08005124       0x22 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
-                0x08005124                __sread
+                0x08004fd8       0x3c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fwalk.o)
+                0x08004fd8                _fwalk_sglue
+ .text._puts_r  0x08005014       0xaa C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+                0x08005014                _puts_r
+ *fill*         0x080050be        0x2 
+ .text.puts     0x080050c0       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+                0x080050c0                puts
+ .text.__sread  0x080050d0       0x22 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
+                0x080050d0                __sread
  .text.__swrite
-                0x08005146       0x38 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
-                0x08005146                __swrite
- .text.__sseek  0x0800517e       0x26 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
-                0x0800517e                __sseek
+                0x080050f2       0x38 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
+                0x080050f2                __swrite
+ .text.__sseek  0x0800512a       0x26 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
+                0x0800512a                __sseek
  .text.__sclose
-                0x080051a4        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
-                0x080051a4                __sclose
+                0x08005150        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
+                0x08005150                __sclose
  .text.__swbuf_r
-                0x080051ac       0x7c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wbuf.o)
-                0x080051ac                __swbuf_r
+                0x08005158       0x7c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wbuf.o)
+                0x08005158                __swbuf_r
  .text.__swsetup_r
-                0x08005228       0xa8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wsetup.o)
-                0x08005228                __swsetup_r
- .text.memset   0x080052d0       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memset.o)
-                0x080052d0                memset
+                0x080051d4       0xa8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wsetup.o)
+                0x080051d4                __swsetup_r
+ .text.memset   0x0800527c       0x10 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memset.o)
+                0x0800527c                memset
  .text._close_r
-                0x080052e0       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-closer.o)
-                0x080052e0                _close_r
+                0x0800528c       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-closer.o)
+                0x0800528c                _close_r
  .text._lseek_r
-                0x08005300       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lseekr.o)
-                0x08005300                _lseek_r
- .text._read_r  0x08005324       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-readr.o)
-                0x08005324                _read_r
+                0x080052ac       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lseekr.o)
+                0x080052ac                _lseek_r
+ .text._read_r  0x080052d0       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-readr.o)
+                0x080052d0                _read_r
  .text._write_r
-                0x08005348       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-writer.o)
-                0x08005348                _write_r
- .text.__errno  0x0800536c        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
-                0x0800536c                __errno
+                0x080052f4       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-writer.o)
+                0x080052f4                _write_r
+ .text.__errno  0x08005318        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+                0x08005318                __errno
  .text.__libc_init_array
-                0x08005378       0x48 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-init.o)
-                0x08005378                __libc_init_array
+                0x08005324       0x48 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-init.o)
+                0x08005324                __libc_init_array
  .text.__retarget_lock_init_recursive
-                0x080053c0        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
-                0x080053c0                __retarget_lock_init_recursive
+                0x0800536c        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
+                0x0800536c                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x080053c2        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
-                0x080053c2                __retarget_lock_acquire_recursive
+                0x0800536e        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
+                0x0800536e                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x080053c4        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
-                0x080053c4                __retarget_lock_release_recursive
- *fill*         0x080053c6        0x2 
- .text._free_r  0x080053c8       0x94 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-freer.o)
-                0x080053c8                _free_r
+                0x08005370        0x2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
+                0x08005370                __retarget_lock_release_recursive
+ *fill*         0x08005372        0x2 
+ .text._free_r  0x08005374       0x94 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-freer.o)
+                0x08005374                _free_r
  .text.sbrk_aligned
-                0x0800545c       0x44 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
+                0x08005408       0x44 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x080054a0      0x100 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
-                0x080054a0                _malloc_r
+                0x0800544c      0x100 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
+                0x0800544c                _malloc_r
  .text.__malloc_lock
-                0x080055a0        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
-                0x080055a0                __malloc_lock
+                0x0800554c        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
+                0x0800554c                __malloc_lock
  .text.__malloc_unlock
-                0x080055ac        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
-                0x080055ac                __malloc_unlock
+                0x08005558        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
+                0x08005558                __malloc_unlock
  .text.__sflush_r
-                0x080055b8      0x104 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
-                0x080055b8                __sflush_r
+                0x08005564      0x104 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
+                0x08005564                __sflush_r
  .text._fflush_r
-                0x080056bc       0x50 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
-                0x080056bc                _fflush_r
+                0x08005668       0x50 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
+                0x08005668                _fflush_r
  .text.__swhatbuf_r
-                0x0800570c       0x48 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
-                0x0800570c                __swhatbuf_r
+                0x080056b8       0x48 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
+                0x080056b8                __swhatbuf_r
  .text.__smakebuf_r
-                0x08005754       0x72 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
-                0x08005754                __smakebuf_r
- *fill*         0x080057c6        0x2 
+                0x08005700       0x72 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
+                0x08005700                __smakebuf_r
+ *fill*         0x08005772        0x2 
  .text._fstat_r
-                0x080057c8       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fstatr.o)
-                0x080057c8                _fstat_r
+                0x08005774       0x24 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fstatr.o)
+                0x08005774                _fstat_r
  .text._isatty_r
-                0x080057ec       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-isattyr.o)
-                0x080057ec                _isatty_r
- .text._sbrk_r  0x0800580c       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sbrkr.o)
-                0x0800580c                _sbrk_r
+                0x08005798       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-isattyr.o)
+                0x08005798                _isatty_r
+ .text._sbrk_r  0x080057b8       0x20 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sbrkr.o)
+                0x080057b8                _sbrk_r
  *(.glue_7)
- .glue_7        0x0800582c        0x0 linker stubs
+ .glue_7        0x080057d8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800582c        0x0 linker stubs
+ .glue_7t       0x080057d8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800582c        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x080057d8        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800582c        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800582c                _init
- .init          0x08005830        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080057d8        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080057d8                _init
+ .init          0x080057dc        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08005838        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08005838                _fini
- .fini          0x0800583c        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08005844                        . = ALIGN (0x4)
-                0x08005844                        _etext = .
+ .fini          0x080057e4        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080057e4                _fini
+ .fini          0x080057e8        0x8 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x080057f0                        . = ALIGN (0x4)
+                0x080057f0                        _etext = .
 
-.vfp11_veneer   0x08005844        0x0
- .vfp11_veneer  0x08005844        0x0 linker stubs
+.vfp11_veneer   0x080057f0        0x0
+ .vfp11_veneer  0x080057f0        0x0 linker stubs
 
-.v4_bx          0x08005844        0x0
- .v4_bx         0x08005844        0x0 linker stubs
+.v4_bx          0x080057f0        0x0
+ .v4_bx         0x080057f0        0x0 linker stubs
 
-.iplt           0x08005844        0x0
- .iplt          0x08005844        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x080057f0        0x0
+ .iplt          0x080057f0        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08005844      0x4ac
-                0x08005844                        . = ALIGN (0x4)
+.rodata         0x080057f0      0x4ac
+                0x080057f0                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08005844       0xbb CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+ .rodata        0x080057f0       0xbb CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
  *(.rodata*)
- *fill*         0x080058ff        0x1 
+ *fill*         0x080058ab        0x1 
  .rodata.AHBPrescTable
-                0x08005900       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32g4xx.c.obj
-                0x08005900                AHBPrescTable
+                0x080058ac       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32g4xx.c.obj
+                0x080058ac                AHBPrescTable
  .rodata.DLCtoBytes
-                0x08005910       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080058bc       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
  .rodata.npio2_hw
-                0x08005920       0x80 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x080058cc       0x80 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
  .rodata.two_over_pi
-                0x080059a0      0x318 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
- .rodata.PIo2   0x08005cb8       0x2c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x0800594c      0x318 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .rodata.PIo2   0x08005c64       0x2c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
  .rodata.init_jk
-                0x08005ce4        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
-                0x08005cf0                        . = ALIGN (0x4)
+                0x08005c90        0xc C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x08005c9c                        . = ALIGN (0x4)
 
-.ARM.extab      0x08005cf0        0x0
-                0x08005cf0                        . = ALIGN (0x4)
+.ARM.extab      0x08005c9c        0x0
+                0x08005c9c                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08005cf0                        . = ALIGN (0x4)
+                0x08005c9c                        . = ALIGN (0x4)
 
-.ARM            0x08005cf0        0x0
-                0x08005cf0                        . = ALIGN (0x4)
-                0x08005cf0                        __exidx_start = .
+.ARM            0x08005c9c        0x0
+                0x08005c9c                        . = ALIGN (0x4)
+                0x08005c9c                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08005cf0                        __exidx_end = .
-                0x08005cf0                        . = ALIGN (0x4)
+                0x08005c9c                        __exidx_end = .
+                0x08005c9c                        . = ALIGN (0x4)
 
-.preinit_array  0x08005cf0        0x0
-                0x08005cf0                        . = ALIGN (0x4)
-                0x08005cf0                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08005c9c        0x0
+                0x08005c9c                        . = ALIGN (0x4)
+                0x08005c9c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08005cf0                        PROVIDE (__preinit_array_end = .)
-                0x08005cf0                        . = ALIGN (0x4)
+                0x08005c9c                        PROVIDE (__preinit_array_end = .)
+                0x08005c9c                        . = ALIGN (0x4)
 
-.init_array     0x08005cf0        0x4
-                0x08005cf0                        . = ALIGN (0x4)
-                0x08005cf0                        PROVIDE (__init_array_start = .)
+.init_array     0x08005c9c        0x4
+                0x08005c9c                        . = ALIGN (0x4)
+                0x08005c9c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08005cf0        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08005cf4                        PROVIDE (__init_array_end = .)
-                0x08005cf4                        . = ALIGN (0x4)
+ .init_array    0x08005c9c        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08005ca0                        PROVIDE (__init_array_end = .)
+                0x08005ca0                        . = ALIGN (0x4)
 
-.fini_array     0x08005cf4        0x4
-                0x08005cf4                        . = ALIGN (0x4)
+.fini_array     0x08005ca0        0x4
+                0x08005ca0                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08005cf4        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08005ca0        0x4 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08005cf8                        . = ALIGN (0x4)
-                0x08005cf8                        _sidata = LOADADDR (.data)
+                0x08005ca4                        . = ALIGN (0x4)
+                0x08005ca4                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08005cf8        0x0
- .rel.iplt      0x08005cf8        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08005ca4        0x0
+ .rel.iplt      0x08005ca4        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x68 load address 0x08005cf8
+.data           0x20000000       0x68 load address 0x08005ca4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -3558,10 +3558,10 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
  *(.RamFunc*)
                 0x20000068                        . = ALIGN (0x4)
 
-.igot.plt       0x20000068        0x0 load address 0x08005d60
+.igot.plt       0x20000068        0x0 load address 0x08005d0c
  .igot.plt      0x20000068        0x0 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.tdata          0x20000068        0x0 load address 0x08005d60
+.tdata          0x20000068        0x0 load address 0x08005d0c
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x20000068                        . = ALIGN (0x4)
                 0x20000068                        _edata = .
@@ -3578,7 +3578,7 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
                 [!provide]                        PROVIDE (__data_source_end = __tdata_source_end)
                 [!provide]                        PROVIDE (__data_source_size = (__data_source_end - __data_source))
 
-.tbss           0x20000068        0x0 load address 0x08005d60
+.tbss           0x20000068        0x0 load address 0x08005d0c
                 0x20000068                        _sbss = .
                 0x20000068                        __bss_start__ = _sbss
  *(.tbss .tbss.*)
@@ -3595,7 +3595,7 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
                 [!provide]                        PROVIDE (__arm32_tls_tcb_offset = MAX (0x8, __tls_align))
                 [!provide]                        PROVIDE (__arm64_tls_tcb_offset = MAX (0x10, __tls_align))
 
-.bss            0x20000068      0x368 load address 0x08005d60
+.bss            0x20000068      0x368 load address 0x08005d0c
  *(.bss)
  .bss           0x20000068       0x1c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
@@ -3683,7 +3683,7 @@ LOAD C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/
                 [!provide]                        PROVIDE (__bss_size = (__bss_end - __bss_start))
 
 ._user_heap_stack
-                0x200003d0      0x600 load address 0x08005d60
+                0x200003d0      0x600 load address 0x08005d0c
                 0x200003d0                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x200003d0                        PROVIDE (_end = .)
@@ -4196,7 +4196,7 @@ LOAD linker stubs
  .debug_macro   0x00026fab       0x16 CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
  .debug_macro   0x00026fc1       0xce CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
 
-.debug_line     0x00000000    0x14515
+.debug_line     0x00000000    0x144fc
  .debug_line    0x00000000      0x820 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32g4xx.c.obj
  .debug_line    0x00000820     0x1956 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
  .debug_line    0x00002176      0xbef cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
@@ -4207,36 +4207,36 @@ LOAD linker stubs
  .debug_line    0x000069dc      0xd51 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .debug_line    0x0000772d     0x413f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c.obj
  .debug_line    0x0000b86c     0x20f3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c.obj
- .debug_line    0x0000d95f      0xef4 CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
- .debug_line    0x0000e853      0x8da CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
- .debug_line    0x0000f12d      0x8cb CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
- .debug_line    0x0000f9f8      0x3f6 CMakeFiles/f3rc2026_practice.dir/Core/Src/sysmem.c.obj
- .debug_line    0x0000fdee      0x71a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
- .debug_line    0x00010508       0x7b CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
- .debug_line    0x00010583      0x5d1 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
- .debug_line    0x00010b54      0x23d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fwalk.o)
- .debug_line    0x00010d91      0x34c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
- .debug_line    0x000110dd      0x2ee C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
- .debug_line    0x000113cb      0x2cb C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wbuf.o)
- .debug_line    0x00011696      0x2e3 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wsetup.o)
- .debug_line    0x00011979      0x17e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memset.o)
- .debug_line    0x00011af7      0x21f C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-closer.o)
- .debug_line    0x00011d16      0x2f5 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reent.o)
- .debug_line    0x0001200b      0x163 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-impure.o)
- .debug_line    0x0001216e      0x21e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lseekr.o)
- .debug_line    0x0001238c      0x21d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-readr.o)
- .debug_line    0x000125a9      0x21e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-writer.o)
- .debug_line    0x000127c7      0x185 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
- .debug_line    0x0001294c      0x168 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-init.o)
- .debug_line    0x00012ab4      0x19b C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
- .debug_line    0x00012c4f      0x30d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-freer.o)
- .debug_line    0x00012f5c      0x4e5 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
- .debug_line    0x00013441      0x1ed C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
- .debug_line    0x0001362e      0x453 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
- .debug_line    0x00013a81      0x3a2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
- .debug_line    0x00013e23      0x2b3 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fstatr.o)
- .debug_line    0x000140d6      0x220 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-isattyr.o)
- .debug_line    0x000142f6      0x21f C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sbrkr.o)
+ .debug_line    0x0000d95f      0xedb CMakeFiles/f3rc2026_practice.dir/Core/Src/main.c.obj
+ .debug_line    0x0000e83a      0x8da CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_it.c.obj
+ .debug_line    0x0000f114      0x8cb CMakeFiles/f3rc2026_practice.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+ .debug_line    0x0000f9df      0x3f6 CMakeFiles/f3rc2026_practice.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x0000fdd5      0x71a CMakeFiles/f3rc2026_practice.dir/Core/Src/syscalls.c.obj
+ .debug_line    0x000104ef       0x7b CMakeFiles/f3rc2026_practice.dir/startup_stm32g474xx.s.obj
+ .debug_line    0x0001056a      0x5d1 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-findfp.o)
+ .debug_line    0x00010b3b      0x23d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fwalk.o)
+ .debug_line    0x00010d78      0x34c C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+ .debug_line    0x000110c4      0x2ee C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-stdio.o)
+ .debug_line    0x000113b2      0x2cb C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wbuf.o)
+ .debug_line    0x0001167d      0x2e3 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-wsetup.o)
+ .debug_line    0x00011960      0x17e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memset.o)
+ .debug_line    0x00011ade      0x21f C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-closer.o)
+ .debug_line    0x00011cfd      0x2f5 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reent.o)
+ .debug_line    0x00011ff2      0x163 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-impure.o)
+ .debug_line    0x00012155      0x21e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lseekr.o)
+ .debug_line    0x00012373      0x21d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-readr.o)
+ .debug_line    0x00012590      0x21e C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-writer.o)
+ .debug_line    0x000127ae      0x185 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+ .debug_line    0x00012933      0x168 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-init.o)
+ .debug_line    0x00012a9b      0x19b C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-lock.o)
+ .debug_line    0x00012c36      0x30d C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-freer.o)
+ .debug_line    0x00012f43      0x4e5 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mallocr.o)
+ .debug_line    0x00013428      0x1ed C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-mlock.o)
+ .debug_line    0x00013615      0x453 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fflush.o)
+ .debug_line    0x00013a68      0x3a2 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-makebuf.o)
+ .debug_line    0x00013e0a      0x2b3 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-fstatr.o)
+ .debug_line    0x000140bd      0x220 C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-isattyr.o)
+ .debug_line    0x000142dd      0x21f C:/Users/kimur_6ppyla1/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sbrkr.o)
 
 .debug_str      0x00000000    0xfdf83
  .debug_str     0x00000000    0xfdf83 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32g4xx.c.obj
